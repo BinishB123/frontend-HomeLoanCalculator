@@ -1,14 +1,13 @@
 import { useReducer } from "react";
 import signupReducer from "../reducer/signUpReducer";
-// import { signup } from "../service/auth";
 import { toast } from "sonner";
 import { signUpUser } from "../redux/thunk/auth";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 
 function Signup() {
-  const signUpDispatch = useDispatch()
-  const navigate = useNavigate()
+  const signUpDispatch = useDispatch();
+  const navigate = useNavigate();
   const [signUpData, dispatch] = useReducer(signupReducer, {
     name: "",
     email: "",
@@ -32,7 +31,7 @@ function Signup() {
       return toast.warning("please provide valid emailId ");
     }
 
-    signUpDispatch(signUpUser(signUpData))
+    signUpDispatch(signUpUser(signUpData));
   };
 
   return (
@@ -98,9 +97,12 @@ function Signup() {
           >
             SIGN UP
           </button>
-          <h1 className="text-sm text-grey-500 text-center font-semibold cursor-pointer " onClick={()=>{
-            navigate('/login')
-          }}>
+          <h1
+            className="text-sm text-grey-500 text-center font-semibold cursor-pointer "
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
             Sign-In if you have an account ?
           </h1>
         </div>

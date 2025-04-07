@@ -1,7 +1,7 @@
 
 export const auth = {
-    signup:'/signup',
-    login:'/login',
-    logout:'/logout'
+    signup:'/auth/signup',
+    login:'/auth/login',
+    logout:'/auth/logout'
 
 }
