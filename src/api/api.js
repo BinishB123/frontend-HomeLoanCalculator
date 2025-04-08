@@ -5,3 +5,8 @@ export const auth = {
     logout:'/auth/logout'
 
 }
+
+
+export const loan = {
+    getloanDataOfUser:"/loan/get-loan-data"
+}

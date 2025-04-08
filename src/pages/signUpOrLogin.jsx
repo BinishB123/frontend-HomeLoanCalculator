@@ -30,10 +30,10 @@ function LoginOrSignUp({ value }) {
   return (
     <>
       <div className=" w-min-screen h-auto flex">
-        <div className="w-[40%] h-[740px] bg-green-400 flex flex-col ">
+        <div className="w-[40%] h-[740px] bg-blue-700 flex flex-col ">
           <div className="w-[100%] mt-3 h-[50px]  flex  ml-4 space-x-1 ">
             <FaCalculator className=" text-4xl text-white" />
-            <h1 className="pt-2 text-white font-semibold text-sm font-dm letter-spacing-2 tracking-wider">
+            <h1 className="pt-2 text-white font-bold text-sm  letter-spacing-2 tracking-wider">
             Home Loan Repayment Scheduler
             </h1>
           </div>
