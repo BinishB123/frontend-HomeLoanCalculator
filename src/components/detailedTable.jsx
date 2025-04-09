@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useLoanContext } from "../context/loanContext";
 
 function DetailTable() {

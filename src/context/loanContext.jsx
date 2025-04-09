@@ -28,7 +28,7 @@ function LoanContextProvider({ children }) {
   });
 
   const { userInfo } = useSelector((state) => state.user);
-  
+
   useEffect(() => {
     if (userInfo) {
       getLoadDetailOfUser(userInfo.id)

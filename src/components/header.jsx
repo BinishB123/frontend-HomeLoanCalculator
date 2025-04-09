@@ -1,15 +1,13 @@
 import { FaCalculator } from "react-icons/fa";
-import { IoIosPerson } from "react-icons/io";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router";
 import { logoutthunk } from "../redux/thunk/auth";
 
 function Header() {
-  const dispatch = useDispatch()
-  const onClickLogout = ()=>{
-       dispatch(logoutthunk())
-  }
-  
+  const dispatch = useDispatch();
+  const onClickLogout = () => {
+    dispatch(logoutthunk());
+  };
+
   return (
     <>
       <div className="w-[100%] h-[90px] bg-white flex justify-center items-center shadow-sm">

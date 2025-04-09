@@ -8,15 +8,11 @@ import { useNavigate } from "react-router";
 import { reset } from "../redux/slice";
 
 function PieChartArea() {
-   const { userInfo } = useSelector((state) => state.user)
-   const navigate = useNavigate()
-   const dipatch = useDispatch()
-  const {
-    calculatedData,
-    loanData,
-    enableSave,
-    setSaveEnable,
-  } = useLoanContext();
+  const { userInfo } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+  const dipatch = useDispatch();
+  const { calculatedData, loanData, enableSave, setSaveEnable } =
+    useLoanContext();
 
   const saveData = () => {
     updateLoanData(
@@ -24,12 +20,14 @@ function PieChartArea() {
       loanData.loanAmount,
       loanData.intrestRate,
       loanData.years
-    ).then(() => {
-      toast.success("saved");
-      setSaveEnable(false);
-    }).catch((error)=>{
-      handleApiError(error,navigate,dipatch,reset)
-    });
+    )
+      .then(() => {
+        toast.success("saved");
+        setSaveEnable(false);
+      })
+      .catch((error) => {
+        handleApiError(error, navigate, dipatch, reset);
+      });
   };
 
   return (

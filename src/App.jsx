@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoanContextProvider from "./context/loanContext";
 import ErrorBoundary from "./components/errorBoundary";
+import ProtectedRoute from "./components/protectedRoute";
 const LoginOrSignUp = lazy(() => import("./pages/signUpOrLogin"));
 const HomePage = lazy(() => import("./pages/home"));
 
@@ -18,7 +19,14 @@ function App() {
         <LoanContextProvider>
           <Suspense fallback={<Loader />}>
             <Routes>
-              <Route path="/*" element={<HomePage />} />
+              <Route
+                path="/*"
+                element={
+                  <ProtectedRoute>
+                    <HomePage />
+                  </ProtectedRoute>
+                }
+              />
               <Route path="/login" element={<LoginOrSignUp value="login" />} />
               <Route
                 path="/signup"

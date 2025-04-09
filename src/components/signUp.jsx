@@ -30,6 +30,9 @@ function Signup() {
     ) {
       return toast.warning("please provide valid emailId ");
     }
+    if (signUpData.password.trim().length < 8) {
+      return toast.warning("password must contain atleast 8 characters ");
+    }
 
     signUpDispatch(signUpUser(signUpData));
   };

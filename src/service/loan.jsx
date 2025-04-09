@@ -8,9 +8,9 @@ export const getLoadDetailOfUser = (id) => {
       .then((response) => {
         resolve(response.data);
       })
-      .catch((error) => {                
-        reject(error.response)
-    })
+      .catch((error) => {
+        reject(error.response);
+      });
   });
 };
 
@@ -20,9 +20,10 @@ export const updateLoanData = (userId, loanAmount, intrest, year) => {
       .patch(loan.updateLoanData, { userId, loanAmount, intrest, year })
       .then((response) => {
         resolve(response.data);
-      }).catch((error) => {                
-        reject(error.response)
-    });
+      })
+      .catch((error) => {
+        reject(error.response);
+      });
   });
 };
 
@@ -35,8 +36,8 @@ export const getMonthlyRepaymentSechedule = (loanAmount, intrest, year) => {
       .then((response) => {
         resolve(response.data);
       })
-      .catch((error) => {                
-        reject(error.response)
-    })
+      .catch((error) => {
+        reject(error.response);
+      });
   });
 };
