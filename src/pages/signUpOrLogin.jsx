@@ -14,6 +14,7 @@ function LoginOrSignUp({ value }) {
     (state) => state.user
   );
   useEffect(() => {
+    
     if (userInfo?.id) {
       navigate("/");
       return;
@@ -29,31 +30,31 @@ function LoginOrSignUp({ value }) {
 
   return (
     <>
-      <div className=" w-min-screen h-auto flex">
-        <div className="w-[40%] h-[740px] bg-blue-700 flex flex-col ">
+      <div className=" w-min-screen h-auto flex md:flex-row flex-col">
+        <div className="w-[100%] md:w-[40%] h-[200px] md:h-[740px] bg-blue-700 flex flex-col ">
           <div className="w-[100%] mt-3 h-[50px]  flex  ml-4 space-x-1 ">
-            <FaCalculator className=" text-4xl text-white" />
+            <FaCalculator className="text-3xl  md:text-4xl text-white" />
             <h1 className="pt-2 text-white font-bold text-sm  letter-spacing-2 tracking-wider">
-            Home Loan Repayment Scheduler
+              Home Loan Repayment Scheduler
             </h1>
           </div>
           <div className="w-[100%] h-[200px]  flex justify-center text-center  items-end mb-5">
-            <h1 className=" text-white text-3xl">
-              {value ==="signup"
+            <h1 className=" text-white text-md md:text-3xl">
+              {value === "signup"
                 ? "Create Your Account and Get Started!"
                 : "WELCOME BACK !"}
             </h1>
           </div>
           <div className="w-[100%]  h-[400px]  ">
-            <h1 className="text-md  text-white text-center font-semibold ">
-              {value ==="signup"
+            <h1 className="text-sm md:text-md  text-white text-center font-semibold ">
+              {value === "signup"
                 ? "Sign up for HomeLoan Planner and unlock powerful tools to plan, track, and manage your home loan like a pro—EMIs made easy, savings made smarter!"
                 : "Log in to HomeLoan Planner and take control of your financial journey—secure access to your personalized loan schedules and smart EMI tracking!"}
             </h1>
           </div>
         </div>
-        <div className="w-[60%] h-[740px]  flex flex-col justify-center items-center   ">
-          {value ==="signup" ? <Signup value={value} /> : <Login />}
+        <div className="w-[100%] md:w-[60%] h-[470px]  md:h-[740px]  flex flex-col justify-center items-center   ">
+          {value === "signup" ? <Signup value={value} /> : <Login />}
         </div>
       </div>
     </>

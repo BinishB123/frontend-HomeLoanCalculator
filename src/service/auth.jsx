@@ -20,11 +20,9 @@ export const signup = (bodydata) => {
 export const loginService = (email,password)=>{
     return new Promise((resolve, reject) => {
         try {
-            axiosInstance.post(auth.login,{email,password} ).then((response) => {
+            axiosInstance.post(auth.login,{email,password}).then((response) => {
                 resolve(response)
-            }).catch((error) => {
-                
-                
+            }).catch((error) => {                
                 reject(error.response.data)
             })
         } catch (error) {
@@ -41,8 +39,6 @@ export const logOut = ()=>{
             axiosInstance.delete(auth.logout).then((response) => {
                 resolve(response)
             }).catch((error) => {
-                
-                
                 reject(error.response.data)
             })
         } catch (error) {

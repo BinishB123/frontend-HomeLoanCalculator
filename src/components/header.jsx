@@ -1,9 +1,15 @@
 import { FaCalculator } from "react-icons/fa";
 import { IoIosPerson } from "react-icons/io";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
+import { logoutthunk } from "../redux/thunk/auth";
 
 function Header() {
-  const navigate = useNavigate();
+  const dispatch = useDispatch()
+  const onClickLogout = ()=>{
+       dispatch(logoutthunk())
+  }
+  
   return (
     <>
       <div className="w-[100%] h-[90px] bg-white flex justify-center items-center shadow-sm">
@@ -17,20 +23,15 @@ function Header() {
         <div className="w-[50%] h-full flex justify-end items-center">
           <h1
             className="md:hidden text-md font-semibold text-blue-800"
-            onClick={() => {
-              navigate("/login");
-            }}
+            onClick={onClickLogout}
           >
-            Login
+            Logout
           </h1>
           <button
             className="hidden sm:flex md:w-[20%] md:h-[40px] hover:border-b-2 hover:border-blue-600 rounded-sm cursor-pointer justify-center items-center text-blue-950 font-semibold text-base md:text-xl"
-            onClick={() => {
-              navigate("/login");
-            }}
+            onClick={onClickLogout}
           >
-            <IoIosPerson className="text-blue-700 mt-1 mr-1" />
-            Login
+            Logout
           </button>
         </div>
       </div>

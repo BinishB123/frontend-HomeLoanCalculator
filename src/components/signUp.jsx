@@ -36,7 +36,7 @@ function Signup() {
 
   return (
     <>
-      <div className="w-[60%] h-[470px]  rounded-md shadow-lg flex flex-col space-y-3 items-center border-2 border-blue-200 ">
+      <div className="w-[80%] md:w-[60%] h-[450px] md:h-[470px]  rounded-md shadow-lg flex flex-col space-y-3 items-center border-2 border-blue-200 ">
         <div className="w-[80%] h-[50px]  mt-5">
           <h1 className="text-2xl text-center text-blue-400 font-bold ">
             SIGNUP

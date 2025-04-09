@@ -8,7 +8,7 @@ import Home from "../components/home"
 
 function HomePage(){
     return(
-        <div className="w=[100%] h-[740px] ">
+        <div className="w=[100%] h-auto ">
             
             <Header></Header>
             <Home></Home>

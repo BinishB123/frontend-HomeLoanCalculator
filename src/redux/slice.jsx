@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit'
-import { loginUser, signUpUser } from './thunk/auth';
+import { loginUser, logoutthunk, signUpUser } from './thunk/auth';
 
 const storedUser = localStorage.getItem("user");
 const user = storedUser ? JSON.parse(storedUser) : null;
@@ -64,6 +64,12 @@ const userSlice =  createSlice({
         }).addCase(signUpUser.rejected,(state,action)=>{
             state.error = true
             state.errormessage = action.payload.error
+        }).addCase(logoutthunk.fulfilled, (state, action) => {
+            state.isLoading = false
+            state.success = action.payload.success
+            state.message = "Logout success"
+            state.userInfo = null
+            localStorage.removeItem("user")
         })
     }
 })

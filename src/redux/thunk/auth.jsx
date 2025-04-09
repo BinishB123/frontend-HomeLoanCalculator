@@ -5,6 +5,8 @@ import { loginService, logOut, signup } from "../../service/auth";
 export const loginUser = createAsyncThunk(
     "auth/loginUser",
     async (userData, { rejectWithValue }) => {
+     
+      
       try {
         const response = await loginService(userData.email, userData.password);
         return response.data; 
