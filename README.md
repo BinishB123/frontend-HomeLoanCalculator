@@ -1,12 +1,54 @@
-# React + Vite
+# 🏡 Home Loan Repayment Scheduler Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This is the **Frontend** of the **Home Loan Repayment Scheduler** project, built using **React.js**. It enables users to schedule and manage home loan repayments efficiently through a clean and responsive interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+It utilizes **React Context**, **Redux**, and **Axios** for state management and API integration
+---
 
-## Expanding the ESLint configuration
+##  Folder Structure
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+frontend/
+│
+src/├── api/              
+|    │
+|    ├── assets/         
+|    │
+|    ├── components/       
+|    │
+|    ├── context/          
+|    │
+|    ├── pages/            
+|    │
+|    ├── reducer/          
+|    │
+|    ├── redux/            
+|    │
+|    ├── service/          
+|    │
+|    ├── utills/           
+|
+├── App.css           
+├── App.jsx           
+├── index.css         
+└── main.jsx          
+
+
+
+## Tech Stack
+- **Frontend:** React.js, Tailwind CSS
+- **State Management:** Redux & context api
+- **API Communication:** Axios
+- **Charts & Visualizations:** Recharts
+- **Build Tool:** vite
+
+
+ Install dependencies:
+   ```sh
+   npm install
+   ```
+ Start the development server:
+   ```sh
+   npm run dev 
+   ```
