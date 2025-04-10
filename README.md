@@ -1,4 +1,4 @@
-# 🏡 Home Loan Repayment Scheduler Frontend
+#  Home Loan Repayment Scheduler Frontend
 
 ## Overview
 
