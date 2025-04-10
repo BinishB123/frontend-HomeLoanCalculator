@@ -44,6 +44,14 @@ src/├── api/
 - **Build Tool:** vite
 
 
+ . **Create a `.env` file in the root  add the following:**
+   ```ini
+
+VITE_BACKEND_BASE_URL = http://localhost:3000
+   ```
+
+
+
  Install dependencies:
    ```sh
    npm install
