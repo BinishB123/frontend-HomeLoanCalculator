@@ -2,11 +2,9 @@ import { useLoanContext } from "../context/loanContext";
 
 function Sliders() {
   const {
-    calculatedData,
-    setCalculatedData,
     loanData,
     setLoanData,
-    enableSave,
+   
     setSaveEnable,
   } = useLoanContext();
   return (
