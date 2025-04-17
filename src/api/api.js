@@ -6,6 +6,6 @@ export const auth = {
 
 export const loan = {
   getloanDataOfUser: "/loan/get-loan-data",
-  updateLoanData: "/loan/update-loan-data",
+  addNewLoanData: "/loan/add-new-loan-data",
   getMonthlyRepaymentSechdule: "/loan/get-monthly-repayment-schedule",
 };

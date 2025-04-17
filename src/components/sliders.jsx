@@ -14,9 +14,27 @@ function Sliders() {
             <h2 className="text-xl font-normal text-black">Loan Amount</h2>
           </div>
           <div className="w-[30%]  border-2 h-[35px]  rounded-sm border-gray-400 flex justify-center items-center">
-            <h1 className="text-md font-medium text-gray-500">
-              ₹ {loanData.loanAmount}{" "}
-            </h1>
+          <input
+  type="text"
+  className="w-[100%] h-[100%] text-center"
+  value={loanData.loanAmount}
+  onChange={(e) => {
+    const input = e.target.value.trim();
+
+  
+    const isValid = /^(?:100000|[1-9][0-9]{5,7}|100000000)$/.test(input);
+
+    if (input === "" || isValid) {
+      setLoanData((prev) => ({
+        ...prev,
+        loanAmount: input,
+      }));
+      setSaveEnable(true);
+    }
+  }}
+/>
+
+           
           </div>
         </div>
 
@@ -95,7 +113,32 @@ function Sliders() {
             </h2>
           </div>
           <div className="w-[8%]  border-2 h-[35px]  rounded-md border-gray-400 flex justify-center items-center">
-            <h1>{loanData.intrestRate} %</h1>
+          <input
+  type="text"
+  className="w-[100%] h-[100%] text-center"
+  value={loanData.intrestRate}
+  onChange={(e) => {
+    const input = e.target.value.trim();
+    if (input === "") {
+      setLoanData((prev) => ({
+        ...prev,
+        intrestRate: input,
+      }));
+      setSaveEnable(true);
+      return;
+    }
+
+    const numericValue = Number(input);
+    if (/^\d{1,2}$/.test(input) && numericValue >= 1 && numericValue <= 20) {
+      setLoanData((prev) => ({
+        ...prev,
+        intrestRate: input,
+      }));
+      setSaveEnable(true);
+    }
+  }}
+/>
+
           </div>
         </div>
 

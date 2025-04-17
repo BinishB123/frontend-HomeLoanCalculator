@@ -1,6 +1,5 @@
 import { PieChart } from "@mui/x-charts/PieChart";
 import { useLoanContext } from "../context/loanContext";
-import { updateLoanData } from "../service/loan";
 import { toast } from "sonner";
 import { useDispatch, useSelector } from "react-redux";
 import { handleApiError } from "../utills/errorHandler";
@@ -11,25 +10,10 @@ function PieChartArea() {
   const { userInfo } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const dipatch = useDispatch();
-  const { calculatedData, loanData, enableSave, setSaveEnable } =
+  const { calculatedData, loanData, enableSave, setSaveEnable,setAdd } =
     useLoanContext();
 
-  const saveData = () => {
-    updateLoanData(
-      userInfo.id,
-      loanData.loanAmount,
-      loanData.intrestRate,
-      loanData.years
-    )
-      .then(() => {
-        toast.success("saved");
-        setSaveEnable(false);
-      })
-      .catch((error) => {
-        handleApiError(error, navigate, dipatch, reset);
-      });
-  };
-
+ 
   return (
     <>
       <div className="w-[100%] md:w-[60%]  h-full flex items-center justify-center  ">
@@ -38,9 +22,11 @@ function PieChartArea() {
             {enableSave ? (
               <button
                 className="w-[40%] h-[40px] bg-blue-500 text-lg cursor-pointer font-semibold  text-white rounded-sm"
-                onClick={saveData}
+                onClick={()=>{
+                  setAdd(true)
+                }}
               >
-                save
+                ADD
               </button>
             ) : (
               ""

@@ -11,8 +11,9 @@ const loanContext = createContext(null);
 function LoanContextProvider({ children }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
+  const [loans, setLoans] = useState([]);
   const [view, setView] = useState(false);
+  const [add, setAdd] = useState(false);
   const [tableData, setTableData] = useState([]);
   const [enableSave, setSaveEnable] = useState(false);
 
@@ -22,9 +23,10 @@ function LoanContextProvider({ children }) {
     totalPayable: 0,
   });
   const [loanData, setLoanData] = useState({
-    loanAmount: 0,
-    years: 0,
-    intrestRate: 0,
+    loanAmount: 100000,
+    years: 1,
+    intrestRate: 1,
+    loanName: "",
   });
 
   const { userInfo } = useSelector((state) => state.user);
@@ -33,16 +35,13 @@ function LoanContextProvider({ children }) {
     if (userInfo) {
       getLoadDetailOfUser(userInfo.id)
         .then((data) => {
+          setLoans(data.latestloanData) 
           setCalculatedData({
             emi: data.emi,
             intrestAmount: data.interestAmount,
             totalPayable: data.totalPayable,
           });
-          setLoanData({
-            loanAmount: data._doc.loanAmount,
-            years: data._doc.year,
-            intrestRate: data._doc.interestRate,
-          });
+          
         })
         .catch((error) => {
           handleApiError(error, navigate, dispatch, reset);
@@ -64,6 +63,10 @@ function LoanContextProvider({ children }) {
           setView,
           tableData,
           setTableData,
+          add,
+          setAdd,
+          loans,
+          setLoans,
         }}
       >
         {children}

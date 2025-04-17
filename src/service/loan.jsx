@@ -14,10 +14,12 @@ export const getLoadDetailOfUser = (id) => {
   });
 };
 
-export const updateLoanData = (userId, loanAmount, intrest, year) => {
+export const addNewLoanData = (userId, loanAmount, intrest, year,loanName) => {
   return new Promise((resolve, reject) => {
     axiosInstance
-      .patch(loan.updateLoanData, { userId, loanAmount, intrest, year })
+      .post(loan.addNewLoanData,
+        { userId, loanAmount, intrest, year,loanName}
+      )
       .then((response) => {
         resolve(response.data);
       })
@@ -28,6 +30,8 @@ export const updateLoanData = (userId, loanAmount, intrest, year) => {
 };
 
 export const getMonthlyRepaymentSechedule = (loanAmount, intrest, year) => {
+  console.log(loanAmount, intrest, year);
+  
   return new Promise((resolve, reject) => {
     axiosInstance
       .get(
